@@ -57,7 +57,8 @@ public class CalendarsController {
 
     for (int x = 0; x < 7; x++) {
       // Map<String, Object> day_map = new HashMap<String, Object>();
-      Map<String, Object> day_map = new HashMap<>();
+      // Map<String, Object> day_map = new HashMap<>();
+      Map<String, Object> dayMap = new HashMap<>();
 
       LocalDate currentDate = todaysDate.plusDays(x);
 
@@ -68,11 +69,17 @@ public class CalendarsController {
           }
       }
 
-      day_map.put("month", currentDate.getMonthValue());
-      day_map.put("date", currentDate.getDayOfMonth());
-      day_map.put("plans", todayPlans);
+      // day_map.put("month", currentDate.getMonthValue());
+      // day_map.put("date", currentDate.getDayOfMonth());
+      // day_map.put("plans", todayPlans);
 
-      weekDays.add(day_map);
+      // weekDays.add(day_map);
+      
+      dayMap.put("month", currentDate.getMonthValue());
+      dayMap.put("date", currentDate.getDayOfMonth());
+      dayMap.put("plans", todayPlans);
+
+      weekDays.add(dayMap);
     }
 
     return weekDays;
